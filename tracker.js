@@ -61,7 +61,6 @@ var database = firebase.database();
                 var rate = employees[dynamicValue].monthlyRate;
                 var startDate = employees[dynamicValue].startDate;
                 var dateAdded = employees[dynamicValue].dateAdded;
-                console.log(dateAdded);
                 // console.log(name +" "+ role +" "+ rate +" "+ startDate);
 
             }
@@ -70,17 +69,28 @@ var database = firebase.database();
 
 
         database.ref('employees').on('child_added', function (snapshot, prevChildKey) {
+            var name = snapshot.val().employeeName;
+            var role = snapshot.val().employeeRole;
+            var startDate = snapshot.val().startDate;
+            var rate = snapshot.val().monthlyRate;
 
+            console.log(monthlyRate);
+            $("#employeeTable > tbody").append(
+                "<tr><td>" +name +"</td>" +
+                "<td>" +role +"</td>" +
+                "<td>" +startDate +"</td>" +
+                "<td>" + "N/A" +"</td>" +
+                "<td>" +rate +"</td>" +
+                "<td>" +"N/A" +"</td></tr>"
+            );
         });
 
-        $("#employeeTable").append("<tr><td>fukk</td></tr>");
+
     }
 
 
 // ============================= MAIN PROCESSES ===========
 displayEmployees();
-
-
 
 
 
