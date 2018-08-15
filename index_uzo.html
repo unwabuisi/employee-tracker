@@ -4,9 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- firebase database -->
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Jquery -->
+    <script  src="https://code.jquery.com/jquery-3.3.1.js"  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="  crossorigin="anonymous"></script>
+
+    <!-- MomentJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js" integrity="sha256-59IZ5dbLyByZgSsRE3Z0TjDuX7e1AiqW5bZ8Bg50dsU=" crossorigin="anonymous"></script>
+    
+    <!-- custom css -->
+    <link rel="stylesheet" href="master.css">
+
+    <!-- JS -->
+    <script type="text/javascript" src="tracker.js"></script>
+
+
     <title>Employee Management</title>
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron">
+                <h1>Employee Data Management</h1>
+                <h4>Directory of Employee Billable Hours</h4>
+            </div>
+        </div>
 
+        <div class="row">
+            <h5>Current Employees</h5>
+            <table  id="enployeeTable" class="table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Employee Name</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">Months Worked</th>
+                        <th scope="col">Monthly Rate ($)</th>
+                        <th scope="col">Total Billed</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row">
+            <table class="table-striped">
+                <tbody>
+                    <form id="employeeForm">
+                        <div class="form-group col-12">
+                            <label for="employeeName">Employee Name</label>
+                            <input type="text" id="employeeName" class="form-control" value="">
+                        </div>
+
+                        <div class="form-group col-12">
+                            <label for="employeeRole">Role</label>
+                            <input type="text" id="employeeRole" class="form-control" value="">
+                        </div>
+
+                        <div class="form-group col-6">
+                            <label for="startDate">Start Date</label>
+                            <input type="date" class="form-control" id="startDate" placeholder="DD/MM/YY" value="">
+                        </div>
+
+                        <div class="form-group col-6">
+                            <label for="monthlyRate">Monthly Rate</label>
+                            <input type="number" class="form-control" id="monthlyRate" value="">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" id="submitBtn" name="submitBtn">Add Employee</button>
+                    </form>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
 </body>
 </html>
