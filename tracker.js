@@ -74,7 +74,6 @@ var database = firebase.database();
             var startDate = snapshot.val().startDate;
             var rate = snapshot.val().monthlyRate;
 
-            console.log(monthlyRate);
             $("#employeeTable > tbody").append(
                 "<tr><td>" +name +"</td>" +
                 "<td>" +role +"</td>" +
